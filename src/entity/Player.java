@@ -9,6 +9,7 @@ import javax.imageio.ImageIO;
 
 import main.GamePanel;
 import main.KeyHandler;
+//import main.UtilityTool;
 
 public class Player extends Entity{
     GamePanel gp;
@@ -16,7 +17,7 @@ public class Player extends Entity{
 
     public final int screenX;
     public final int screenY;
-    int hasKey = 0;
+   // public int hasKey = 0;
 
 
     public Player(GamePanel gp, KeyHandler keyH){
@@ -56,7 +57,22 @@ public class Player extends Entity{
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        
     }
+    //  cannot run
+    // public BufferedImage setup(String imageName){
+    //     UtilityTool uTool = new UtilityTool();
+    //     BufferedImage image = null;
+    //     try {
+    //         image = ImageIO.read(getClass().getResourceAsStream("/res/player/" + imageName +".png"));
+    //         image = uTool.scaleImage(image, gp.tileSize, gp.tileSize);
+    //     } catch (IOException e) {
+    //         e.printStackTrace();
+    //     }
+
+    //     return image;
+    // }
 
     public void update(){
         if (keyH.upPressed == true || keyH.downPressed == true ||
@@ -104,42 +120,46 @@ public class Player extends Entity{
                     spriteCounter = 0;
                 }
         }
-    //     else {
-    //         counter2++;
-    //         if(counter2 == 20){
-    //             spriteNum = 1;
-    //         }
-    //         counter2 = 0;
-    //     }
-    // }
 
     }
+
     public void pickUpObject(int i){
 
         if(i != 999){
-            String objectName = gp.obj[i].name;
+        //     String objectName = gp.obj[i].name;
 
-            switch(objectName){
-        case "Key":
-            gp.playSE(1);
-            hasKey++;
-            gp.obj[i] = null;
-            System.out.println("Key:"+hasKey);
-            break;
-        case "Door":
-             if(hasKey > 0){
-                gp.playSE(3);
-                gp.obj[i] = null;
-                hasKey--;
-             }
-            System.out.println("Key:+hasKey");
-            break;
-        case "Boots":
-             gp.playSE(2);
-             speed += 1;
-             gp.obj[i] = null;
-             break;
-            }
+        //     switch(objectName){
+        // case "Key":
+        //     gp.playSE(1);
+        //     hasKey++;
+        //     gp.obj[i] = null;
+        //    // System.out.println("Key:"+hasKey);
+        //     gp.ui.showMessage("You got a key!");
+        //     break;
+        // case "Door":
+        //     if(hasKey > 0){
+        //         gp.playSE(3);
+        //         gp.obj[i] = null;
+        //         hasKey--;
+        //         gp.ui.showMessage("You opened the door!");
+        //     }
+        //     else{
+        //         gp.ui.showMessage("You need a key!");
+        //     }
+        //     //System.out.println("Key:+hasKey");
+        //     break;
+        // case "Boots":
+        //     gp.playSE(2);
+        //     speed += 1;
+        //     gp.obj[i] = null;
+        //     gp.ui.showMessage("Speed up!");
+        //     break;
+        // case "Chest": // end game
+        //     gp.ui.gameFinished = true;
+        //     gp.stopMusic();
+        //     gp.playSE(4);
+        //     break;
+        //     }
         }
     }
     // drawing character

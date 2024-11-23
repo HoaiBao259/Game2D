@@ -33,15 +33,25 @@ public class GamePanel extends JPanel implements Runnable{
 
     //SYSTEM
     TileManager tileM = new TileManager(this);
-    KeyHandler keyH = new KeyHandler();
-    Sound sound = new Sound();
+    KeyHandler keyH = new KeyHandler(this);
+
+    // implement 2 separate sounds object
+    Sound music = new Sound();   // music theme
+    Sound se = new Sound(); // sound effect
+
     public CollisionChecker cChecker = new CollisionChecker(this);
     public AssetSetter aSetter = new AssetSetter(this);
+    public UI ui = new UI(this);
     Thread gameThread;
 
     //ENTITY AND OBJECT
     public Player player = new Player(this, keyH);
     public SuperObject obj[] = new SuperObject[10];
+
+    //GAME STATE
+    public int gameState;
+    public final int playState = 1;
+    public final int pauseState = 2;
 
 
     //Set player's default position
@@ -50,6 +60,7 @@ public class GamePanel extends JPanel implements Runnable{
     int playerSpeed = 4;
 
     public GamePanel(){
+
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
         this.setBackground(Color.black);
         this.setDoubleBuffered(true);
@@ -60,6 +71,9 @@ public class GamePanel extends JPanel implements Runnable{
     public void setupGame(){
         aSetter.setObject();
         playMusic(0);
+        //stopMusic();
+        gameState = playState;
+
     }
 
     public void startGameThread(){
@@ -130,49 +144,66 @@ public class GamePanel extends JPanel implements Runnable{
         }
     }
     public void update(){
-            // if (keyH.upPressed == true){
-            //     playerY -= playerSpeed;
-            // }
-            // else if (keyH.downPressed == true){
-            //     playerY += playerSpeed;
-            // }
-            // else if (keyH.leftPressed == true){
-            //     playerX -= playerSpeed;
-            // }
-            // else if (keyH.rightPressed == true){
-            //     playerX += playerSpeed;
-            // }
-        player.update();
+        if (gameState == playState) {
+            player.update();
+        }
+        if (gameState == pauseState) {
+            // nothing
+        }
+        // player.update();
 
     }
+
     public void paintComponent(Graphics g){
-            super.paintComponent(g);
+        super.paintComponent(g);
+        Graphics2D g2 = (Graphics2D)g;
 
-            Graphics2D g2 = (Graphics2D)g;
-            // g2.setColor(Color.white);
-            // g2.fillRect(playerX, playerY, tileSize, tileSize);
-            //TILE
-            tileM.draw(g2);
-            //OBJECT
-            for(int i = 0 ; i < obj.length ; i++){
-                if(obj[i] != null){
-                    obj[i].draw(g2, this);
-                }
+        // DEBUG
+        long drawStart = 0;
+        if (keyH.checkDrawTime == true) {
+            drawStart = System.nanoTime();
+        }
+        
+
+        //TILE
+        tileM.draw(g2);
+
+        //OBJECT
+        for(int i = 0 ; i < obj.length ; i++){
+            if(obj[i] != null){
+                obj[i].draw(g2, this);
             }
-            //PLAYER
-            player.draw(g2);
-            g2.dispose();
+        }
+
+        //PLAYER
+        player.draw(g2);
+
+        //UI
+         ui.draw(g2);
+
+        // DEBUG
+        if (keyH.checkDrawTime == true) {
+            long drawEnd = System.nanoTime();
+            long passed = drawEnd - drawStart;
+            g2.setColor(Color.WHITE);
+            g2.drawString("Draw time: " + passed, 10, 400);
+            System.out.println("Draw time: "+passed);
+        }
+
+        g2.dispose();
     }
+
+    // Sound
     public void playMusic(int i) {
-        sound.setFile(i);
-        sound.play();
-        sound.loop();
+        music.setFile(i);
+        music.play();
+        music.loop();
     }
     public void stopMusic(){
-        sound.stop();
+        music.stop();
     }
     public void playSE(int i){
-        sound.setFile(i);
-        sound.play();
+        se.setFile(i);
+        se.play();
     }
 }
