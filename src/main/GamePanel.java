@@ -7,6 +7,7 @@ import java.awt.Graphics2D;
 
 import javax.swing.JPanel;
 
+import entity.Entity;
 import entity.Player;
 import tile.TileManager;
 import Object.SuperObject;
@@ -33,7 +34,7 @@ public class GamePanel extends JPanel implements Runnable{
 
     //SYSTEM
     TileManager tileM = new TileManager(this);
-    KeyHandler keyH = new KeyHandler(this);
+    public KeyHandler keyH = new KeyHandler(this);
 
     // implement 2 separate sounds object
     Sound music = new Sound();   // music theme
@@ -47,11 +48,14 @@ public class GamePanel extends JPanel implements Runnable{
     //ENTITY AND OBJECT
     public Player player = new Player(this, keyH);
     public SuperObject obj[] = new SuperObject[10];
+    public Entity npc[] = new Entity[10];
 
     //GAME STATE
     public int gameState;
+    public int titleState = 0;
     public final int playState = 1;
     public final int pauseState = 2;
+    public final int dialogueState = 3;
 
 
     //Set player's default position
@@ -70,10 +74,10 @@ public class GamePanel extends JPanel implements Runnable{
 
     public void setupGame(){
         aSetter.setObject();
-        playMusic(0);
+        aSetter.setNPC();
+        //playMusic(0);
         //stopMusic();
-        gameState = playState;
-
+        gameState = titleState;
     }
 
     public void startGameThread(){
@@ -145,7 +149,14 @@ public class GamePanel extends JPanel implements Runnable{
     }
     public void update(){
         if (gameState == playState) {
+            //Player
             player.update();
+            //NPC
+            for (int i = 0; i < npc.length; i++) {
+                if(npc[i] != null) {
+                    npc[i].update();
+                }
+            }
         }
         if (gameState == pauseState) {
             // nothing
@@ -163,23 +174,33 @@ public class GamePanel extends JPanel implements Runnable{
         if (keyH.checkDrawTime == true) {
             drawStart = System.nanoTime();
         }
-        
-
-        //TILE
-        tileM.draw(g2);
-
-        //OBJECT
-        for(int i = 0 ; i < obj.length ; i++){
-            if(obj[i] != null){
-                obj[i].draw(g2, this);
-            }
+        //TITLE SCREEN
+        if(gameState == titleState){
+            ui.draw(g2);
         }
+        //OTHERS
+        else{
+            tileM.draw(g2);
 
-        //PLAYER
-        player.draw(g2);
+            //OBJECT
+            for(int i = 0 ; i < obj.length ; i++){
+                if(obj[i] != null){
+                    obj[i].draw(g2, this);
+                }
+            }
+            //NPC
+            for(int i = 0 ; i < npc.length ; i++){
+                if(npc[i] != null){
+                    npc[i].draw(g2);
+                }
+            }
 
-        //UI
-         ui.draw(g2);
+            //PLAYER
+            player.draw(g2);
+
+            //UI
+            ui.draw(g2);
+        }
 
         // DEBUG
         if (keyH.checkDrawTime == true) {

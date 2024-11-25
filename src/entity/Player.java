@@ -12,16 +12,17 @@ import main.KeyHandler;
 //import main.UtilityTool;
 
 public class Player extends Entity{
-    GamePanel gp;
     KeyHandler keyH;
 
     public final int screenX;
     public final int screenY;
-   // public int hasKey = 0;
+
 
 
     public Player(GamePanel gp, KeyHandler keyH){
-        this.gp = gp;
+
+        super(gp);
+
         this.keyH = keyH;
         setDefaultValues();
         getPlayerImage(); 
@@ -58,21 +59,9 @@ public class Player extends Entity{
             e.printStackTrace();
         }
 
-        
-    }
-    //  cannot run
-    // public BufferedImage setup(String imageName){
-    //     UtilityTool uTool = new UtilityTool();
-    //     BufferedImage image = null;
-    //     try {
-    //         image = ImageIO.read(getClass().getResourceAsStream("/res/player/" + imageName +".png"));
-    //         image = uTool.scaleImage(image, gp.tileSize, gp.tileSize);
-    //     } catch (IOException e) {
-    //         e.printStackTrace();
-    //     }
 
-    //     return image;
-    // }
+    }
+
 
     public void update(){
         if (keyH.upPressed == true || keyH.downPressed == true ||
@@ -100,6 +89,11 @@ public class Player extends Entity{
                 //CHECK OBJECT COLLISION
                 int objIndex = gp.cChecker.checkObject(this,true);
                 pickUpObject(objIndex);
+
+                //CHEC NPC COLLISION
+                int npcIndex = gp.cChecker.checkEntity(this, gp.npc);
+                interactNPC(npcIndex);
+
                 // IF COLLISION IS FALSE,PLAYER CAN MOVE
             if(collisionOn == false){
                 switch(direction){
@@ -162,6 +156,17 @@ public class Player extends Entity{
         //     }
         }
     }
+    public void interactNPC(int i) {
+        if (i != 999) {
+
+            if (gp.keyH.enterPressed == true) {
+                gp.gameState = gp.dialogueState;
+                gp.npc[i].speak();
+            }
+        }
+        gp.keyH.enterPressed = false;
+    }
+
     // drawing character
     public void draw(Graphics2D g2){
         // g2.setColor(Color.white);
