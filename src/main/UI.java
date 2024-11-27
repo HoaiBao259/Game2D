@@ -107,7 +107,7 @@ public class UI {   // display all message
                     g2.drawImage(heart_full, x, y, null);
                 }
                 i++;
-                x += gp.tileSize;                                 
+                x += gp.tileSize;
             }
     }
     public void drawTitleScreen() {

@@ -42,7 +42,9 @@ public class Player extends Entity{
         worldY = gp.tileSize * 21;
         speed = 4;
         direction = "down";
-
+        /*1 maxLife unit = a heart half
+         => 6 maxLife unit = 3 hearts*/
+         
         // PLAYER STATUS
         maxLife = 6;
         life = maxLife;
@@ -97,6 +99,11 @@ public class Player extends Entity{
                 //CHEC NPC COLLISION
                 int npcIndex = gp.cChecker.checkEntity(this, gp.npc);
                 interactNPC(npcIndex);
+
+                //CHECK EVENT
+                gp.eHandler.checkEvent();
+
+                gp.keyH.enterPressed = false;
 
                 // IF COLLISION IS FALSE,PLAYER CAN MOVE
             if(collisionOn == false){
@@ -168,7 +175,7 @@ public class Player extends Entity{
                 gp.npc[i].speak();
             }
         }
-        gp.keyH.enterPressed = false;
+
     }
 
     // drawing character

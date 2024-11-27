@@ -1,13 +1,13 @@
 package Object;
-import javax.imageio.ImageIO;
-
 import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 public class OBJ_Heart extends SuperObject{
     //GamePanel gp;
     public OBJ_Heart(){
        // this.gp = gp;
-        name = "Key";
+        name = "Heart";
         try{
             image = ImageIO.read(getClass().getResourceAsStream("/res/Objects/heart_full.png"));
             image2 = ImageIO.read(getClass().getResourceAsStream("/res/Objects/heart_half.png"));
