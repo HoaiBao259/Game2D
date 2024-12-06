@@ -1,10 +1,10 @@
-package main;
+package Main;
 
 import Object.OBJ_Key;
 import Object.OBJ_Door;
+import Entity.NPC_OldMan;
 import Object.OBJ_Boots;
 import Object.OBJ_Chest;
-import entity.NPC_OldMan;
 
 public class AssetSetter {
 

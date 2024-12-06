@@ -1,8 +1,9 @@
-package entity;
-
-import main.GamePanel;
+package Entity;
 
 import javax.imageio.ImageIO;
+
+import Main.GamePanel;
+
 import java.io.IOException;
 import java.util.Random;
 

@@ -1,4 +1,4 @@
-package main;
+package Main;
 import java.awt.Rectangle;
 public class EventHandler {
     

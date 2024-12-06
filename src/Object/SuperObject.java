@@ -1,10 +1,9 @@
 package Object;
 
-import main.GamePanel;
-//import main.UtilityTool;
-
 import java.awt.*;
 import java.awt.image.BufferedImage;
+
+import Main.GamePanel;
 
 public class SuperObject {
 

@@ -1,8 +1,9 @@
-package entity;
-import main.GamePanel;
-import main.UtilityTool;
-
+package Entity;
 import javax.imageio.ImageIO;
+
+import Main.GamePanel;
+import Main.UtilityTool;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;

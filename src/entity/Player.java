@@ -1,4 +1,4 @@
-package entity;
+package Entity;
 //import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
@@ -7,9 +7,8 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-import main.GamePanel;
-import main.KeyHandler;
-//import main.UtilityTool;
+import Main.GamePanel;
+import Main.KeyHandler;
 
 public class Player extends Entity{
     KeyHandler keyH;
