@@ -237,12 +237,12 @@ public class UI {
 
     public void drawTitleScreen(){
         // BACKGROUND COLOR
-        g2.setColor(new Color(105,105,105));
+        g2.setColor(new Color(0,0,0));
         g2.fillRect(0,0,gp.screenWidth, gp.screenHeight);
 
         // TITLE NAME
         g2.setFont(g2.getFont().deriveFont(Font.BOLD, 96F));
-        String text = "Rising from the Depths";
+        String text = "Forbidden Dark Maze !!!";
         int x = getXForCenteredText(text);
         int y = gp.tileSize * 3;
 
@@ -256,7 +256,7 @@ public class UI {
 
         // SECOND TITLE NAME
         g2.setFont(g2.getFont().deriveFont(Font.BOLD, 46F));
-        text = "New Developer's Dungeon Crawler";
+        text = "OOP Project";
         x = getXForCenteredText(text);
         y += gp.tileSize * 1.5;
         g2.drawString(text, x, y);

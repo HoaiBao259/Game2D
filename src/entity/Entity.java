@@ -80,7 +80,7 @@ public class Entity {
     public int motionDuration;
     public int motion2Duration;
     public Entity currentWeapon;
-    public Entity currentShield;
+    public Entity currentShield; 
     public Entity currentLight;
     public Projectile projectile;
     public boolean boss;

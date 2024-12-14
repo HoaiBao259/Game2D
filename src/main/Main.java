@@ -4,13 +4,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 
-public class Main {
+public class Main { 
     public static JFrame window;
     public static void main(String[] args) throws IOException, FontFormatException {
         window = new JFrame();
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setResizable(false);
-        window.setTitle("Rising from the Depths: New Developer's Dungeon Crawler");
+        window.setTitle("OOP Game 2D");
         new Main().setIcon();
 
         GamePanel gamePanel = new GamePanel();

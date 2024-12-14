@@ -21,11 +21,11 @@ public class MON_Muddy extends Entity {
         name = "Muddy";
         defaultSpeed = 2;
         speed = defaultSpeed;
-        maxLife = 8;
+        maxLife = 2;
         life = maxLife;
-        attack = 7;
+        attack = 3;
         defence = 0;
-        exp = 3;
+        exp = 10;
         projectile = new OBJ_Rock(gp);
 
         solidArea.x = 3;

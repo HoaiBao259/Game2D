@@ -12,7 +12,7 @@ public class OBJ_Coin extends Entity {
 
         type = type_pickupOnly;
         name = objName;
-        value = 1;
+        value = 5;
         down1 = setup("/Resources/Objects/coin_image", gp.tileSize - 10, gp.tileSize - 10);
     }
 

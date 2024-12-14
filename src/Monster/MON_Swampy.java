@@ -19,11 +19,11 @@ public class MON_Swampy extends Entity {
         name = "Swampy";
         defaultSpeed = 1;
         speed = defaultSpeed;
-        maxLife = 4;
+        maxLife = 2;
         life = maxLife;
-        attack = 5;
+        attack = 1;
         defence = 0; // defence is 1 since the player starting damage is 1
-        exp = 1; // how much you can get when you kill the monster
+        exp = 5; // how much you can get when you kill the monster
         projectile = new OBJ_Rock(gp);
 
         solidArea.x = 3;

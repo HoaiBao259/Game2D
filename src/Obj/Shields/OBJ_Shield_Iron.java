@@ -13,6 +13,6 @@ public class OBJ_Shield_Iron extends Entity {
         down1 = setup("/Resources/Objects/iron_bulwark_shield", gp.tileSize, gp.tileSize);
         defenceValue = 2;
         description = "[" + name + "]\nUnyielding and Reliable \nProtection";
-        price = 250;
+        price = 60;
     }
 }

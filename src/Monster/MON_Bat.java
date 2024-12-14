@@ -17,13 +17,13 @@ public class MON_Bat extends Entity {
 
         type = type_monster;
         name = "Bat";
-        defaultSpeed = 4;
+        defaultSpeed = 3;
         speed = defaultSpeed;
-        maxLife = 7;
+        maxLife = 3;
         life = maxLife;
-        attack = 5;
+        attack = 3;
         defence = 0;
-        exp = 7;
+        exp = 10;
 
         solidArea.x = 3;
         solidArea.y = 15;

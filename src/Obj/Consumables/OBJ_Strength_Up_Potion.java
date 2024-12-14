@@ -16,7 +16,7 @@ public class OBJ_Strength_Up_Potion extends Entity {
         value = 1;
         down1 = setup("/Resources/Objects/strengthUp",gp.tileSize, gp.tileSize);
         description = "[" + name + "]\nIncrease your strength.";
-        price = 135;
+        price = 45;
         stackable = true;
 
         setDialogue();

@@ -24,7 +24,7 @@ public class Particle extends Entity{
         this.yd = yd;
 
         life = maxLife;
-        int offset = (gp.tileSize/2) - size/2;
+        int offset = (gp.tileSize/2) - size/2;   
 
         // If we're cutting a drytree somewhere this is going to be the particle generator
         worldX = generator.worldX + offset;
@@ -37,7 +37,7 @@ public class Particle extends Entity{
         // If the particle life is the half of its maxLife or less it adds to the yd value
         // making the particle look like it's falling to the ground
         if (life < maxLife/3){
-            yd++;
+            yd++; 
         }
 
         worldX += xd * speed;

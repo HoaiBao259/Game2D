@@ -17,7 +17,7 @@ public class OBJ_Speed_Up_Potion extends Entity {
         value = 1;
         down1 = setup("/Resources/Objects/speedUp",gp.tileSize, gp.tileSize);
         description = "[" + name + "]\nIncreasing your speed.";
-        price = 125;
+        price = 85;
         stackable = true;
 
         setDialogue();

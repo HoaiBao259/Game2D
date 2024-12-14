@@ -21,9 +21,9 @@ public class MON_Small_Orc extends Entity {
         name = "Small Orc";
         defaultSpeed = 3;
         speed = defaultSpeed;
-        maxLife = 22;
+        maxLife = 6;
         life = maxLife;
-        attack = 9;
+        attack = 3;
         defence = 0;
         exp = 5;
         projectile = new OBJ_Rock(gp);
