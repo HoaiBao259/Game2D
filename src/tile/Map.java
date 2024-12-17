@@ -75,25 +75,56 @@ public class Map extends TileManager{
         g2.drawString("Press M to close", 750, 550);
     }
 
-    public void drawMiniMap(Graphics2D g2){
-        if (miniMapOn){
+    // public void drawMiniMap(Graphics2D g2){
+    //     if (miniMapOn){
 
-            // Draw map
+    //         // Draw map
+    //         int width = 150;
+    //         int height = 150;
+    //         int x = gp.screenWidth - width - 50;
+    //         int y = 50;
+
+    //         g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.8f));
+    //         g2.drawImage(worldMap[gp.currentMap], x, y, width, height, null);
+
+    //         // Draw player
+    //         double scale = (double) (gp.tileSize * gp.maxWorldCol) / width;
+    //         int playerX = (int)(x + gp.player.worldX / scale);
+    //         int playerY = (int)(y + gp.player.worldY / scale);
+    //         int playerSize = gp.tileSize / 4;
+    //         g2.drawImage(gp.player.down1, playerX - 6, playerY - 6, playerSize, playerSize, null);
+
+    //         g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f));
+    //     }
+    // }
+    public void drawMiniMap(Graphics2D g2) {
+        if (miniMapOn) {
+    
+            // MiniMap dimensions and position
             int width = 150;
             int height = 150;
             int x = gp.screenWidth - width - 50;
             int y = 50;
-
+    
+            // Draw black background
+            g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f));
+            g2.setColor(Color.BLACK); // Set color to black
+            g2.fillRect(x, y, width, height); // Fill rectangle with black color
+    
+            // Set transparency for the map
             g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.8f));
+    
+            // Draw world map
             g2.drawImage(worldMap[gp.currentMap], x, y, width, height, null);
-
-            // Draw player
+    
+            // Draw player marker
             double scale = (double) (gp.tileSize * gp.maxWorldCol) / width;
-            int playerX = (int)(x + gp.player.worldX / scale);
-            int playerY = (int)(y + gp.player.worldY / scale);
+            int playerX = (int) (x + gp.player.worldX / scale);
+            int playerY = (int) (y + gp.player.worldY / scale);
             int playerSize = gp.tileSize / 4;
             g2.drawImage(gp.player.down1, playerX - 6, playerY - 6, playerSize, playerSize, null);
-
+    
+            // Reset composite to default
             g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f));
         }
     }
