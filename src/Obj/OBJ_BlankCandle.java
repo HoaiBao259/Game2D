@@ -1,9 +1,10 @@
 package Obj;
 
-import Entity.Entity;
-import Main.GamePanel;
+import Mainn.GamePanel;
 
 import java.util.Random;
+
+import Entityy.Entity;
 
 public class OBJ_BlankCandle extends Entity {
     GamePanel gp;

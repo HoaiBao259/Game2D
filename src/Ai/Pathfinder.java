@@ -1,8 +1,8 @@
 package Ai;
 
-import Main.GamePanel;
-
 import java.util.ArrayList;
+
+import Mainn.GamePanel;
 
 public class Pathfinder {
     GamePanel gp;

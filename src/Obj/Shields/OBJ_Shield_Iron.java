@@ -1,7 +1,7 @@
 package Obj.Shields;
 
-import Entity.Entity;
-import Main.GamePanel;
+import Entityy.Entity;
+import Mainn.GamePanel;
 
 public class OBJ_Shield_Iron extends Entity {
     public static final String objName = "Iron Bulwark";

@@ -1,7 +1,7 @@
 package Obj.Consumables;
 
-import Entity.Entity;
-import Main.GamePanel;
+import Entityy.Entity;
+import Mainn.GamePanel;
 
 public class OBJ_Sleeping_Tent extends Entity {
     GamePanel gp;

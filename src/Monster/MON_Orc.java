@@ -1,11 +1,12 @@
 package Monster;
 
-import Entity.Entity;
-import Main.GamePanel;
+import Mainn.GamePanel;
 import Obj.Consumables.OBJ_Coin;
 import Obj.Consumables.OBJ_Heart;
 import Obj.Consumables.OBJ_Mana_Crystal;
 import java.util.Random;
+
+import Entityy.Entity;
 
 public class MON_Orc extends Entity {
     GamePanel gp;

@@ -1,8 +1,8 @@
 package Monster;
 
 import Data.Progress;
-import Entity.Entity;
-import Main.GamePanel;
+import Entityy.Entity;
+import Mainn.GamePanel;
 import Obj.Consumables.OBJ_Coin;
 import Obj.OBJ_Door_Iron;
 import Obj.Consumables.OBJ_Heart;

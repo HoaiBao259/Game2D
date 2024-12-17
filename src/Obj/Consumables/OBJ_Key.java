@@ -44,8 +44,8 @@
 
 package Obj.Consumables;
 
-import Entity.Entity;
-import Main.GamePanel;
+import Entityy.Entity;
+import Mainn.GamePanel;
 
 public class OBJ_Key extends Entity {
     GamePanel gp;

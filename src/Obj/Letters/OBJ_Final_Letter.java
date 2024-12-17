@@ -1,7 +1,7 @@
 package Obj.Letters;
 
-import Entity.Entity;
-import Main.GamePanel;
+import Entityy.Entity;
+import Mainn.GamePanel;
 
 public class OBJ_Final_Letter extends Entity {
     GamePanel gp;

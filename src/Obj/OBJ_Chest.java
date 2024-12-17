@@ -1,7 +1,7 @@
 package Obj;
 
-import Entity.Entity;
-import Main.GamePanel;
+import Entityy.Entity;
+import Mainn.GamePanel;
 
 public class OBJ_Chest extends Entity {
     GamePanel gp;

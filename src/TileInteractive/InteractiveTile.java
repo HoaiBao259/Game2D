@@ -1,9 +1,10 @@
 package TileInteractive;
 
-import Entity.Entity;
-import Main.GamePanel;
+import Mainn.GamePanel;
 
 import java.awt.*;
+
+import Entityy.Entity;
 
 public class InteractiveTile extends Entity {
     GamePanel gp;

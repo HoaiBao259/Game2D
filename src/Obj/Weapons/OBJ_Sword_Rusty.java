@@ -1,7 +1,7 @@
 package Obj.Weapons;
 
-import Entity.Entity;
-import Main.GamePanel;
+import Entityy.Entity;
+import Mainn.GamePanel;
 
 public class OBJ_Sword_Rusty extends Entity {
     public static final String objName = "Rusty Sword";

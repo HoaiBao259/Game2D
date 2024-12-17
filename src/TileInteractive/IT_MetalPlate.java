@@ -1,6 +1,6 @@
 package TileInteractive;
 
-import Main.GamePanel;
+import Mainn.GamePanel;
 
 public class IT_MetalPlate extends InteractiveTile{
     GamePanel gp;

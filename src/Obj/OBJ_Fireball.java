@@ -1,10 +1,11 @@
 package Obj;
 
-import Entity.Entity;
-import Entity.Projectile;
-import Main.GamePanel;
+import Mainn.GamePanel;
 
 import java.awt.*;
+
+import Entityy.Entity;
+import Entityy.Projectile;
 
 public class OBJ_Fireball extends Projectile {
     GamePanel gp;

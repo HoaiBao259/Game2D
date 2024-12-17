@@ -1,9 +1,10 @@
 package Obj;
 
-import Entity.Projectile;
-import Main.GamePanel;
+import Mainn.GamePanel;
 
 import java.awt.*;
+
+import Entityy.Projectile;
 
 public class OBJ_Rock extends Projectile {
     GamePanel gp;
