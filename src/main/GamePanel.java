@@ -11,6 +11,7 @@ import TileInteractive.InteractiveTile;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -33,6 +34,13 @@ public class GamePanel extends JPanel implements Runnable {
     public final int maxMap = 10; // we can create 10 different maps - can be adjusted
     public int currentMap = 0; // indicates the current map number
 
+    // For Full Screening
+    int screenWidth2 = screenWidth;
+    int screenHeight2 = screenHeight;
+    BufferedImage tempScreen;
+    Graphics2D g2;
+    public boolean fullScreenOn = false;
+
     // FPS
     int FPS = 60;
 
@@ -45,9 +53,9 @@ public class GamePanel extends JPanel implements Runnable {
     public AssetSetter aSetter = new AssetSetter(this);
     public UI ui = new UI(this);
     public EventHandler eHandler = new EventHandler(this);
-    Config config = new Config(this);
+    Config config = new Config(this);     
     public Pathfinder pFinder = new Pathfinder(this);
-   // public EnvironmentManager eManager = new EnvironmentManager(this);
+    //public EnvironmentManager eManager = new EnvironmentManager(this);
     Map map = new Map(this);
     SaveLoad saveLoad = new SaveLoad(this);
     public EntityGenerator eGenerator = new EntityGenerator(this);

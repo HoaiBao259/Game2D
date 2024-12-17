@@ -40,7 +40,7 @@ public class NPC_DungeonKeeper extends Entity {
     // Store character dialogues
     public void setDialogue(){
         // MAP 0
-        dialogues[0][0] = "Welcome to the depths of our dungeon, adventurer.\nMay your journey be filled with treasure and glory.";
+        dialogues[0][0] = "Welcome to the dark maze, adventurer.\nMay your journey be filled with treasure and glory.";
         dialogues[0][1] = "Are you ready to proceed to the next level of the dungeon?\nIf so, the ladder will take you deeper into the dungeon.\nRemember, the deeper you go, the greater the challenge and rewards will\nbe. Good luck!";
 
         // MAP 1
