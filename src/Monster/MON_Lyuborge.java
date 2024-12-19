@@ -24,13 +24,13 @@ public class MON_Lyuborge extends Entity {
         name = monName;
         defaultSpeed = 1;
         speed = defaultSpeed;
-        maxLife = 1;
+        maxLife = 100;
         life = maxLife;
         attack = 3;
         defence = 2;
         exp = 250;
         knockBackPower = 5;
-        sleep = true;
+        sleep = false;
 
         solidArea.x = 48;
         solidArea.y = 48;

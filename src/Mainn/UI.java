@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
-import Entityy.Entity;
+import Entityy.Entity; 
 
 public class UI {
 
