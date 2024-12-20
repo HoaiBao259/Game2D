@@ -1,51 +1,51 @@
-package TileInteractive;
+// package TileInteractive;
 
-import Mainn.GamePanel;
+// import Mainn.GamePanel;
 
-import java.awt.*;
+// import java.awt.*;
 
-import Entityy.Entity;
+// import Entityy.Entity;
 
-public class IT_DestructibleWall extends InteractiveTile{
+// public class IT_DestructibleWall extends InteractiveTile{
 
-    GamePanel gp;
+//     GamePanel gp;
 
-    public IT_DestructibleWall(GamePanel gp, int col, int row) {
-        super(gp);
-        this.gp = gp;
+//     public IT_DestructibleWall(GamePanel gp, int col, int row) {
+//         super(gp);
+//         this.gp = gp;
 
-        this.worldX = gp.tileSize * col;
-        this.worldY = gp.tileSize * row;
+//         this.worldX = gp.tileSize * col;
+//         this.worldY = gp.tileSize * row;
 
-        down1 = setup("/Resources/Tiles_Interactive/destructiblewall", gp.tileSize, gp.tileSize);
-        destructible = true;
-        life = 3;
-    }
+//         down1 = setup("/Resources/Tiles_Interactive/destructiblewall", gp.tileSize, gp.tileSize);
+//         destructible = true;
+//         life = 3;
+//     }
 
-    public boolean isCorrectItem(Entity entity){
-        return entity.currentWeapon.type == type_pickaxe;
-    }
+//     public boolean isCorrectItem(Entity entity){
+//         return entity.currentWeapon.type == type_pickaxe;
+//     }
 
-    public void playSe(){
-        gp.playSE(19);
-    }
+//     public void playSe(){
+//         gp.playSE(19);
+//     }
 
-    public InteractiveTile getDestroyedForm(){
-        return null;
-    }
+//     public InteractiveTile getDestroyedForm(){
+//         return null;
+//     }
 
 
-    // WE CHOOSE COLOR, SIZE, SPEED AND MAX LIFE OF THIS DRY TREE PARTICLE
-    public Color getParticleColor(){
-        return new Color(65,65,65);
-    }
-    public int getParticleSize(){
-        return 6;
-    }
-    public int getParticleSpeed(){ // how fast the particle can fly
-        return 1;
-    }
-    public int getParticleMaxLife(){
-        return 20;
-    }
-}
+//     // WE CHOOSE COLOR, SIZE, SPEED AND MAX LIFE OF THIS DRY TREE PARTICLE
+//     public Color getParticleColor(){
+//         return new Color(65,65,65);
+//     }
+//     public int getParticleSize(){
+//         return 6;
+//     }
+//     public int getParticleSpeed(){ // how fast the particle can fly
+//         return 1;
+//     }
+//     public int getParticleMaxLife(){
+//         return 20;
+//     }
+// }
